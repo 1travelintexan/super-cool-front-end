@@ -10,11 +10,12 @@ import Spinner from "./components/Spinner";
 import HomePage from "./pages/HomePage";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
+import axios from "axios";
 function App() {
   const [products, setProducts] = useState([]);
   const [currentUser, setCurrentUser] = useState(null);
   console.log("api url is here...", API_URL);
-  console.log(import.meta.env);
+
   useEffect(() => {
     // const fetchRecipes = () => {
     //   fetch("https://dummyjson.com/recipes")
