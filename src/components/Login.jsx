@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "../config";
 const Login = ({ setCurrentUser }) => {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
@@ -9,7 +10,7 @@ const Login = ({ setCurrentUser }) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.get("http://localhost:5005/users");
+      const { data } = await axios.get(`${API_URL}/users`);
       console.log("inside the login function", data);
       const foundUser = data.find((oneUser) => {
         if (oneUser.username.toLowerCase() === username.toLowerCase()) {
